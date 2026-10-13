@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b12">
+<title>ARPA UDINUS - Point Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">FREE FIRE</div>
+    <h1>ARPA UDINUS</h1>
+    <div class="line"></div>
+    <h3>SISTEM POIN</h3>
+    <p>5 MATCH POINT CALCULATOR</p>
+  </div>
+  <img class="logo" src="Garena Free Fire.png" alt="garena Free Fire" onerror="this.style.display='none'">
+</header>
+
+<main>
+<section>
+  <div class="section-title"><span>POINT SYSTEM</span><h2>Sistem Poin</h2></div>
+  <div class="rules">
+    <div class="card">
+      <div class="rule-header"><span>PLACEMENT</span><b>POIN</b></div>
+      <div class="placements">
+        <div>1st <b>20</b></div>
+        <div>2nd <b>17</b></div>
+        <div>3rd <b>15</b></div>
+        <div>4th <b>13</b></div>
+        <div>5th <b>12</b></div>
+        <div>6th <b>10</b></div>
+        <div>7th <b>6</b></div>
+        <div>8th <b>4</b></div>
+        <div>9th <b>3</b></div>
+        <div>10th <b>2</b></div>
+        <div>11th <b>1</b></div>
+        <div>12th <b>0</b></div>
+      </div>
+    </div>
+    <div class="card kill-card">
+      <div class="kill-number">2</div>
+      <h3>KILL POINT</h3>
+      <p>SETIAP KILL</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span>MATCH FORMAT</span><h2>5 Match</h2></div>
+  <div class="match-format">
+    <div>MATCH <b>01</b></div>
+    <div>MATCH <b>02</b></div>
+    <div>MATCH <b>03</b></div>
+    <div>MATCH <b>04</b></div>
+    <div>MATCH <b>05</b></div>
+    <div class="format-total">TOTAL <b>5 MATCH</b></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span>CALCULATOR</span><h2>Point Calculator</h2></div>
+  <div class="calculator">
+    <div class="toolbar">
+      <div>
+        <h3>TEAM POINTS</h3>
+        <p id="saveStatus">Menghubungkan ke server...</p>
+      </div>
+      <div class="toolbar-actions">
+        <button id="addTeamBtn">+ ADD TEAM</button>
+        <button id="exportBtn" class="secondary">EXPORT CSV</button>
+      </div>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab active" data-tab="match1">MATCH 1</button>
+      <button class="tab" data-tab="match2">MATCH 2</button>
+      <button class="tab" data-tab="match3">MATCH 3</button>
+      <button class="tab" data-tab="match4">MATCH 4</button>
+      <button class="tab" data-tab="match5">MATCH 5</button>
+      <button class="tab" data-tab="total">TOTAL 5 MATCH</button>
+    </nav>
+
+    <div class="match-panel active" id="match1"><div class="table-wrap"><table><thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead><tbody id="match1Body"></tbody></table></div></div>
+    <div class="match-panel" id="match2"><div class="table-wrap"><table><thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead><tbody id="match2Body"></tbody></table></div></div>
+    <div class="match-panel" id="match3"><div class="table-wrap"><table><thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead><tbody id="match3Body"></tbody></table></div></div>
+    <div class="match-panel" id="match4"><div class="table-wrap"><table><thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead><tbody id="match4Body"></tbody></table></div></div>
+    <div class="match-panel" id="match5"><div class="table-wrap"><table><thead><tr><th>NO</th><th>TEAM</th><th>PLACEMENT</th><th>KILL</th><th>PLACEMENT POINT</th><th>KILL POINT</th><th>TOTAL</th><th></th></tr></thead><tbody id="match5Body"></tbody></table></div></div>
+
+    <div class="match-panel" id="total">
+      <div class="table-wrap">
+        <table class="total-table">
+          <thead><tr><th>RANK</th><th>TEAM</th><th>MATCH 1</th><th>MATCH 2</th><th>MATCH 3</th><th>MATCH 4</th><th>MATCH 5</th><th>PLACEMENT</th><th>KILL POINT</th><th>TOTAL POINT</th></tr></thead>
+          <tbody id="totalBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="calculateBtn">CALCULATE POINT</button>
+      <button id="resetBtn" class="secondary">RESET</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title"><span>LEADERBOARD</span><h2>Final Standing</h2></div>
+  <div class="leaderboard">
+    <div class="leaderboard-header"><b>FINAL LEADERBOARD</b><b>5 MATCH</b></div>
+    <div id="leaderboardBody"><div class="empty">Klik CALCULATE POINT untuk melihat ranking.</div></div>
+  </div>
+</section>
+</main>
+
+<footer><strong>ARPA UDINUS</strong>FREE FIRE POINT CALCULATOR · 5 MATCH</footer>
+<script src="app.js"></script>
+</body>
+</html>

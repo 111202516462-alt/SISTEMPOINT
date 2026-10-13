@@ -1,0 +1,468 @@
+
+:root {
+--bg:#080b12;
+--panel:#111722;
+--line:#283446;
+--text:#f4f7fb;
+--muted:#94a3b8;
+--accent:#f6c453;
+--green:#35e0ad;
+--red:#ff647c;
+}
+
+* {
+box-sizing:border-box;
+}
+
+body {
+margin:0;
+background:radial-gradient(circle at 50% -15%,#24344a,transparent 42%),var(--bg);
+color:var(--text);
+font-family:Arial,sans-serif;
+}
+
+button,input {
+font:inherit;
+}
+
+button {
+cursor:pointer;
+border:0;
+border-radius:8px;
+padding:12px 15px;
+background:var(--accent);
+color:#15120a;
+font-weight:bold;
+}
+
+button.secondary {
+background:#202938;
+color:var(--text);
+border:1px solid var(--line);
+}
+
+.hero {
+position:relative;
+min-height:245px;
+padding:40px 20px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+border-bottom:1px solid var(--line);
+background:linear-gradient(120deg,#111a28,#080b12,#182234);
+}
+
+.hero-content {
+position:relative;
+}
+
+.eyebrow,.section-title span {
+color:var(--green);
+font-size:11px;
+font-weight:bold;
+letter-spacing:4px;
+}
+
+.hero h1 {
+font-size:clamp(34px,7vw,62px);
+letter-spacing:3px;
+margin:12px 0;
+}
+
+.line {
+height:3px;
+width:90px;
+background:var(--accent);
+margin:15px auto;
+}
+
+.hero h3 {
+letter-spacing:5px;
+}
+
+.hero p {
+color:var(--muted);
+font-size:12px;
+letter-spacing:2px;
+}
+
+.logo {
+position:absolute;
+right:24px;
+top:20px;
+width:140px;
+height: 140px;
+object-fit:contain;
+}
+
+main {
+width:min(1200px,94%);
+margin:auto;
+}
+
+section {
+padding:30px 0;
+}
+
+.section-title {
+text-align:center;
+margin-bottom:22px;
+}
+
+.section-title h2 {
+font-size:clamp(22px,4vw,32px);
+margin:8px 0;
+}
+
+.rules {
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:15px;
+}
+
+.card,.calculator,.leaderboard {
+border:1px solid var(--line);
+background:linear-gradient(145deg,#131b28,#0e131c);
+border-radius:14px;
+overflow:hidden;
+}
+
+.card {
+padding:20px;
+}
+
+.rule-header {
+display:flex;
+justify-content:space-between;
+color:var(--muted);
+font-size:12px;
+margin-bottom:15px;
+}
+
+.placements {
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:8px;
+}
+
+.placements div {
+display:flex;
+justify-content:space-between;
+padding:10px;
+background:#ffffff08;
+border-radius:6px;
+}
+
+.placements b {
+color:var(--accent);
+}
+
+.kill-card {
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.kill-number {
+font-size:65px;
+font-weight:bold;
+color:var(--accent);
+}
+
+.kill-card p {
+color:var(--muted);
+font-size:11px;
+}
+
+.match-format {
+display:grid;
+grid-template-columns:repeat(5,1fr) 1.3fr;
+gap:8px;
+}
+
+.match-format div {
+border:1px solid var(--line);
+border-radius:9px;
+padding:15px 5px;
+text-align:center;
+background:var(--panel);
+color:var(--muted);
+font-size:10px;
+}
+
+.match-format b {
+display:block;
+font-size:22px;
+color:var(--text);
+margin-top:7px;
+}
+
+.match-format .format-total {
+background:#292315;
+border-color:#665329;
+}
+
+.format-total b {
+color:var(--accent);
+font-size:16px;
+}
+
+.toolbar {
+padding:20px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+}
+
+.toolbar h3 {
+margin:0 0 7px;
+}
+
+.toolbar p {
+margin:0;
+color:var(--green);
+font-size:12px;
+}
+
+.toolbar-actions {
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+}
+
+.tabs {
+display:flex;
+gap:8px;
+padding:0 15px 15px;
+overflow-x:auto;
+}
+
+.tab {
+flex:1;
+min-width:max-content;
+background:#0b1018;
+color:var(--muted);
+border:1px solid var(--line);
+font-size:12px;
+}
+
+.tab.active {
+background:var(--green);
+color:#06140f;
+border-color:var(--green);
+}
+
+.match-panel {
+display:none;
+}
+
+.match-panel.active {
+display:block;
+}
+
+.table-wrap {
+overflow-x:auto;
+}
+
+table {
+border-collapse:collapse;
+width:100%;
+min-width:740px;
+font-size:13px;
+}
+
+th {
+background:#0b1018;
+color:var(--muted);
+font-size:10px;
+text-align:left;
+white-space:nowrap;
+}
+
+td,th {
+padding:12px;
+border-bottom:1px solid var(--line);
+}
+
+.team-name,.number-input {
+color:var(--text);
+background:#080d15;
+border:1px solid var(--line);
+border-radius:6px;
+padding:8px;
+}
+
+.team-name {
+min-width:120px;
+width:100%;
+}
+
+.number-input {
+width:65px;
+}
+
+.point-value {
+color:var(--muted);
+}
+
+.total-value,.grand-total {
+color:var(--green);
+font-weight:bold;
+}
+
+.total-table {
+min-width:850px;
+}
+
+.rank-number {
+color:var(--accent);
+font-weight:bold;
+}
+
+.remove-team {
+background:#2b151c;
+color:var(--red);
+border:1px solid #67313b;
+padding:6px 10px;
+font-size:18px;
+}
+
+.actions {
+display:flex;
+justify-content:center;
+gap:12px;
+padding:20px;
+}
+
+.leaderboard-header {
+display:flex;
+justify-content:space-between;
+padding:17px 20px;
+border-bottom:1px solid var(--line);
+font-size:12px;
+}
+
+.leaderboard-header b:last-child {
+color:var(--green);
+}
+
+.leaderboard-row {
+display:grid;
+grid-template-columns:35px 1fr auto auto;
+align-items:center;
+gap:12px;
+padding:15px 20px;
+border-bottom:1px solid var(--line);
+}
+
+.leaderboard-rank {
+font-size:20px;
+color:var(--accent);
+font-weight:bold;
+}
+
+.leaderboard-team {
+font-weight:bold;
+overflow-wrap:anywhere;
+}
+
+.leaderboard-kills {
+font-size:11px;
+color:var(--muted);
+}
+
+.leaderboard-points {
+color:var(--green);
+font-weight:bold;
+}
+
+.empty {
+text-align:center;
+color:var(--muted);
+padding:25px;
+}
+
+footer {
+text-align:center;
+border-top:1px solid var(--line);
+padding:25px;
+color:var(--muted);
+font-size:11px;
+letter-spacing:2px;
+}
+
+footer strong {
+display:block;
+color:var(--text);
+font-size:15px;
+margin-bottom:8px;
+}
+
+@media(max-width:700px) {
+.hero {
+min-height:220px;
+}
+
+.logo {
+width:42px;
+height:42px;
+right:12px;
+top:12px;
+}
+
+.rules {
+grid-template-columns:1fr;
+}
+
+.placements {
+grid-template-columns:repeat(2,1fr);
+}
+
+.match-format {
+grid-template-columns:repeat(3,1fr);
+}
+
+.match-format .format-total {
+grid-column:span 3;
+}
+
+.toolbar {
+align-items:flex-start;
+flex-direction:column;
+}
+
+.toolbar-actions {
+width:100%;
+}
+
+.toolbar-actions button {
+flex:1;
+}
+
+.tabs {
+padding-left:10px;
+padding-right:10px;
+}
+
+.leaderboard-row {
+grid-template-columns:28px 1fr auto;
+gap:8px;
+padding:13px;
+}
+
+.leaderboard-kills {
+display:none;
+}
+
+.actions {
+flex-wrap:wrap;
+}
+
+.actions button {
+flex:1;
+}
+}
